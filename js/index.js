@@ -3,11 +3,11 @@
 
 //nav//
 
-    //hover nav items navy//
+    //hover nav turns color pink//
 
 const nav = document.querySelectorAll('a');
 const navHover = function(e){
-    e.target.style.color = 'navy';
+    e.target.style.color = 'pink';
     e.preventDefault();
 }
 
@@ -49,9 +49,9 @@ head.addEventListener('click', headingZoom);
 
 //buttons//
 
-      //button style actions on click NOT WORKING!!!!!!!!//
+      //button style actions on click//
 
-    const buttonClick = document.querySelectorAll('btn');
+    const buttonClick = document.querySelectorAll('.btn');
 
     buttonClick.forEach((btn) => {
         btn.addEventListener('click', (event) => {
@@ -77,8 +77,6 @@ head.addEventListener('click', headingZoom);
 
 //Scrolling wheel over paragraph//
 
-expeditionp
-
 const textContentPara = document.querySelector('#expeditionp');
 
 textContentPara.addEventListener('wheel', (event) => {
@@ -89,7 +87,7 @@ textContentPara.addEventListener('wheel', (event) => {
 
 //scroll counter alert//
 
-const counter = 0;
+let counter = 0;
 window.addEventListener("scroll", function (event) {
   console.log("scroll counter!");
   counter++;
@@ -107,8 +105,24 @@ window.addEventListener("scroll", function (event) {
         footerItems.forEach(event => {
             event.addEventListener('dblclick', (event) => {
                 event.target.style.color = 'white'; 
+                event.target.style.backgroundColor = 'dodgerblue'; 
             });
         });
+
+
+ // Loading Event 
+window.addEventListener("load", function(event) {
+    console.log("Working Great!");
+  });  
+
+
+
+//Resize browser Event
+
+window.addEventListener("resize", function(event) {
+    alert("iiiiiity bitty living space");
+  });
+
 
 
 //Propogation//
@@ -127,7 +141,10 @@ titleContent.addEventListener('mouseleave', (event) => {
 });
 
 
-// //prevent default on nav items//
-// nav.addEventListener('click', (event) => {
-//     event.preventDefault();
-// }); 
+//prevent default - stop navigation from items from refreshing the page//
+
+const navPrevent = document.querySelector('nav');
+navPrevent.addEventListener('click', (event) => {
+    event.preventDefault();
+    
+})
